@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Sign Up</h2>
+    
+    {% if messages %}
+        <ul style="color: red;">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="POST" action="{% url 'request_otp' %}">
+        {% csrf_token %}
+        <label for="email">Enter your email address:</label><br>
+        <input type="email" id="email" name="email" required placeholder="you@example.com"><br><br>
+        
+        <button type="submit">Send OTP</button>
+    </form>
+</body>
+</html>

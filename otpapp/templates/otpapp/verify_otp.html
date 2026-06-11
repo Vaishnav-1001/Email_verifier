@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Verify OTP</title>
+</head>
+<body>
+    <h2>Verify Your Email</h2>
+    <p>We sent a 6-digit code to <strong>{{ email }}</strong>.</p>
+    
+    {% if messages %}
+        <ul style="color: red;">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="POST" action="{% url 'verify_otp' %}">
+        {% csrf_token %}
+        <label for="otp">Enter OTP:</label><br>
+        <input type="text" id="otp" name="otp" required maxlength="6" pattern="\d{6}" placeholder="123456"><br><br>
+        
+        <button type="submit">Verify & Register</button>
+    </form>
+</body>
+</html>
