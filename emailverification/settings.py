@@ -84,8 +84,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True#telling Django to create a secure, encrypted tunnel between your application and the email server
-EMAIL_HOST_USER = 'testing75448@gmail.com'  # Replace with your actual Gmail address
-EMAIL_HOST_PASSWORD = 'nazz vhzn qvex nmra' # See the warning below!
+EMAIL_HOST_USER = ''  # Replace with your actual Gmail address
+EMAIL_HOST_PASSWORD = '' # See the warning below!
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
